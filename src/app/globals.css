@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Space+Grotesk:wght@500;600;700&family=Silkscreen:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
+  --font-pixel: 'Silkscreen', monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #F4EFE6;
+  color: #273524;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #F4EFE6;
+  color: #273524;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-display);
+}
+
+.pixelated {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+/* Custom Border Utilities */
+.border-hood {
+  border: 2px solid #273524;
+}
+
+.border-hood-muted {
+  border: 1.5px solid #B1B293;
+}
+
+/* Selection */
+::selection {
+  background-color: #C47A3A;
+  color: #FEF7EF;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F4EFE6;
+}
+::-webkit-scrollbar-thumb {
+  background: #273524;
+  border-radius: 0px;
+}
