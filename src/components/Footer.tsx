@@ -4,9 +4,9 @@ import { Twitter } from "lucide-react";
 
 export default function Footer() {
   const footerLinks = [
-    { label: "Home", href: "#hero" },
-    { label: "Collection", href: "#collection" },
-    { label: "Allocation", href: "#how-it-works" },
+    { label: "Home", href: "/#hero" },
+    { label: "Collection", href: "/#collection" },
+    { label: "Allocation", href: "/#how-it-works" },
     { label: "Docs", href: "/docs" },
     { label: "Apply", href: "/apply" },
   ];
@@ -17,7 +17,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 pb-8 border-b border-hood-secondary/30">
           {/* Brand & Tagline */}
           <div className="flex flex-col items-center md:items-start gap-2">
-            <Link href="#hero" className="flex items-center gap-2.5">
+            <Link href="/#hero" className="flex items-center gap-2.5">
               <div className="w-8 h-8 rounded-hood bg-hood-primary border border-hood-primary flex items-center justify-center overflow-hidden">
                 <Image
                   src="/assets/bears/bear_1.png"
