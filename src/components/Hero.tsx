@@ -44,18 +44,19 @@ export default function Hero() {
               </span>
               <span className="w-1.5 h-1.5 rounded-full bg-hood-accent" />
               <span className="text-xs font-semibold text-hood-primary">
-                A Place to Belong
+                ALLOWLIST NOW OPEN
               </span>
             </div>
 
             {/* Main Heading */}
             <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl font-bold text-hood-primary tracking-tight leading-[1.08]">
-              5,555 PIXEL BEARS
+              A NEW GENERATION OF BEARS
             </h1>
 
             {/* Supporting Copy */}
             <p className="text-lg sm:text-xl text-hood-primary/90 font-medium max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-              Hand-drawn pixel bears built around art, identity, and community.
+              Handcrafted pixel bears with a whole new mindset. Built to adapt,
+              survive, and rule.
             </p>
 
             {/* CTA Group */}
