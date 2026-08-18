@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { ArrowRight, Sparkles } from "lucide-react";
 
 export default function FinalCTA() {
   return (
@@ -33,7 +33,8 @@ export default function FinalCTA() {
 
           {/* Supporting Copy */}
           <p className="text-lg text-hood-light/90 font-medium max-w-xl mx-auto leading-relaxed">
-            Secure your spot on the allowlist and get early access to mint 2 bears for free.
+            Secure your spot on the allowlist and get early access to mint 1
+            bears for free.
           </p>
 
           {/* CTA Button */}

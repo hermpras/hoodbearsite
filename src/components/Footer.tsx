@@ -1,14 +1,14 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import { Twitter } from 'lucide-react';
+import Link from "next/link";
+import Image from "next/image";
+import { Twitter } from "lucide-react";
 
 export default function Footer() {
   const footerLinks = [
-    { label: 'Home', href: '#hero' },
-    { label: 'Collection', href: '#collection' },
-    { label: 'Allocation', href: '#how-it-works' },
-    { label: 'Docs', href: '/docs' },
-    { label: 'Apply', href: '/apply' },
+    { label: "Home", href: "#hero" },
+    { label: "Collection", href: "#collection" },
+    { label: "Allocation", href: "#how-it-works" },
+    { label: "Docs", href: "/docs" },
+    { label: "Apply", href: "/apply" },
   ];
 
   return (
@@ -20,7 +20,7 @@ export default function Footer() {
             <Link href="#hero" className="flex items-center gap-2.5">
               <div className="w-8 h-8 rounded-hood bg-hood-primary border border-hood-primary flex items-center justify-center overflow-hidden">
                 <Image
-                  src="/assets/bears/bear_1.svg"
+                  src="/assets/bears/bear_1.png"
                   alt="HoodBear Logo"
                   width={28}
                   height={28}
@@ -65,7 +65,9 @@ export default function Footer() {
 
         {/* Bottom copyright line */}
         <div className="pt-8 text-center text-xs text-hood-primary/70 font-medium flex flex-col sm:flex-row items-center justify-between gap-4">
-          <span>© {new Date().getFullYear()} HOODBEAR. All rights reserved.</span>
+          <span>
+            © {new Date().getFullYear()} HOODBEAR. All rights reserved.
+          </span>
           <span className="font-pixel text-[10px] text-hood-primary/70 font-bold">
             5,555 HAND-DRAWN PIXEL BEARS
           </span>

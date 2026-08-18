@@ -1,17 +1,17 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { usePathname } from 'next/navigation';
-import { Menu, X, ArrowUpRight } from 'lucide-react';
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+import { Menu, X, ArrowUpRight } from "lucide-react";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
-  const isApplyPage = pathname === '/apply';
+  const isApplyPage = pathname === "/apply";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,35 +21,38 @@ export default function Navbar() {
         setIsScrolled(false);
       }
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navLinks = [
-    { label: 'Home', href: isApplyPage ? '/#hero' : '#hero' },
-    { label: 'Collection', href: isApplyPage ? '/#collection' : '#collection' },
-    { label: 'Allocation', href: isApplyPage ? '/#how-it-works' : '#how-it-works' },
-    { label: 'Docs', href: '/docs' },
+    { label: "Home", href: isApplyPage ? "/#hero" : "#hero" },
+    { label: "Collection", href: isApplyPage ? "/#collection" : "#collection" },
+    {
+      label: "Allocation",
+      href: isApplyPage ? "/#how-it-works" : "#how-it-works",
+    },
+    { label: "Docs", href: "/docs" },
   ];
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled || isApplyPage
-          ? 'bg-hood-bg/95 backdrop-blur-md border-b-2 border-hood-secondary/40 py-3.5 shadow-sm'
-          : 'bg-transparent py-5'
+          ? "bg-hood-bg/95 backdrop-blur-md border-b-2 border-hood-secondary/40 py-3.5 shadow-sm"
+          : "bg-transparent py-5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Brand Logo */}
           <Link
-            href={isApplyPage ? '/#hero' : '#hero'}
+            href={isApplyPage ? "/#hero" : "#hero"}
             className="flex items-center gap-2.5 group focus:outline-none"
           >
             <div className="relative w-9 h-9 rounded-hood bg-hood-primary border-2 border-hood-primary flex items-center justify-center overflow-hidden shadow-hood-sm group-hover:translate-x-[1px] group-hover:translate-y-[1px] transition-transform">
               <Image
-                src="/assets/bears/bear_1.svg"
+                src="/assets/bears/bear_1.png"
                 alt="HoodBear Logo"
                 width={32}
                 height={32}
@@ -80,8 +83,8 @@ export default function Navbar() {
               href="/apply"
               className={`font-display text-xs uppercase tracking-wider px-5 py-2.5 font-bold border-2 border-hood-primary rounded-hood transition-all flex items-center gap-1.5 ${
                 isApplyPage
-                  ? 'bg-hood-primary text-hood-light shadow-hood-sm ring-2 ring-hood-accent/50'
-                  : 'bg-hood-accent hover:bg-amber-700 text-hood-light shadow-hood hover:shadow-hood-sm hover:translate-x-[2px] hover:translate-y-[2px]'
+                  ? "bg-hood-primary text-hood-light shadow-hood-sm ring-2 ring-hood-accent/50"
+                  : "bg-hood-accent hover:bg-amber-700 text-hood-light shadow-hood hover:shadow-hood-sm hover:translate-x-[2px] hover:translate-y-[2px]"
               }`}
             >
               <span>APPLY TO WL</span>
@@ -102,7 +105,11 @@ export default function Navbar() {
             className="md:hidden p-2 rounded-hood border-2 border-hood-primary bg-hood-bg text-hood-primary shadow-hood-sm focus:outline-none"
             aria-label="Toggle menu"
           >
-            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            {mobileMenuOpen ? (
+              <X className="w-5 h-5" />
+            ) : (
+              <Menu className="w-5 h-5" />
+            )}
           </button>
         </div>
       </div>
@@ -127,11 +134,11 @@ export default function Navbar() {
               onClick={() => setMobileMenuOpen(false)}
               className={`mt-2 text-center font-display text-xs uppercase tracking-wider py-3 font-bold border-2 border-hood-primary shadow-hood rounded-hood ${
                 isApplyPage
-                  ? 'bg-hood-primary text-hood-light'
-                  : 'bg-hood-accent hover:bg-amber-700 text-hood-light'
+                  ? "bg-hood-primary text-hood-light"
+                  : "bg-hood-accent hover:bg-amber-700 text-hood-light"
               }`}
             >
-              APPLY TO WL {isApplyPage && '(ACTIVE)'}
+              APPLY TO WL {isApplyPage && "(ACTIVE)"}
             </Link>
           </div>
         </div>

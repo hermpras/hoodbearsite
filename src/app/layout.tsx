@@ -1,39 +1,49 @@
-import type { Metadata } from 'next';
-import './globals.css';
+import type { Metadata } from "next";
+import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://hoodbear.io'),
-  title: 'HoodBear — 5,555 Pixel Bears',
-  description: 'HoodBear is a 5,555-piece hand-drawn pixel bear NFT collection. A place to belong.',
-  keywords: ['HoodBear', 'NFT', 'Pixel Art', 'Community', 'Pixel Bears', 'Web3'],
-  authors: [{ name: 'HoodBear Team' }],
+  metadataBase: new URL("https://hoodbear.io"),
+  title: "HoodBear — 5,555 Pixel Bears",
+  description:
+    "HoodBear is a 5,555-piece hand-drawn pixel bear NFT collection. A place to belong.",
+  keywords: [
+    "HoodBear",
+    "NFT",
+    "Pixel Art",
+    "Community",
+    "Pixel Bears",
+    "Web3",
+  ],
+  authors: [{ name: "HoodBear Team" }],
   openGraph: {
-    title: 'HoodBear — 5,555 Pixel Bears',
-    description: 'HoodBear is a 5,555-piece hand-drawn pixel bear NFT collection. A place to belong.',
-    url: 'https://hoodbear.io',
-    siteName: 'HoodBear',
+    title: "HoodBear — 5,555 Pixel Bears",
+    description:
+      "HoodBear is a 5,555-piece hand-drawn pixel bear NFT collection. A place to belong.",
+    url: "https://hoodbear.io",
+    siteName: "HoodBear",
     images: [
       {
-        url: '/assets/bears/bear_1.svg',
+        url: "/assets/bears/bear_1.png",
         width: 1200,
         height: 630,
-        alt: 'HoodBear Pixel Art Showcase',
+        alt: "HoodBear Pixel Art Showcase",
       },
     ],
-    locale: 'en_US',
-    type: 'website',
+    locale: "en_US",
+    type: "website",
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'HoodBear — 5,555 Pixel Bears',
-    description: 'HoodBear is a 5,555-piece hand-drawn pixel bear NFT collection. A place to belong.',
-    creator: '@hoodbear',
-    images: ['/assets/bears/bear_1.svg'],
+    card: "summary_large_image",
+    title: "HoodBear — 5,555 Pixel Bears",
+    description:
+      "HoodBear is a 5,555-piece hand-drawn pixel bear NFT collection. A place to belong.",
+    creator: "@hoodbear",
+    images: ["/assets/bears/bear_1.png"],
   },
   icons: {
-    icon: '/assets/bears/bear_1.svg',
-    shortcut: '/assets/bears/bear_1.svg',
-    apple: '/assets/bears/bear_1.svg',
+    icon: "/assets/bears/bear_1.png",
+    shortcut: "/assets/bears/bear_1.png",
+    apple: "/assets/bears/bear_1.png",
   },
 };
 

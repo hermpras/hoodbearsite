@@ -1,23 +1,23 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import Link from "next/link";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
   const heroBears = [
-    { src: '/assets/bears/bear_1.svg', name: 'Honey Bear #001', rotate: -6 },
-    { src: '/assets/bears/bear_2.svg', name: 'Cyber Bear #002', rotate: 2 },
-    { src: '/assets/bears/bear_3.svg', name: 'Crown King #003', rotate: -2 },
-    { src: '/assets/bears/bear_4.svg', name: 'Panda Bear #004', rotate: 6 },
+    { src: "/assets/bears/bear_12.png", name: "Honey Bear #001", rotate: -6 },
+    { src: "/assets/bears/bear_2.png", name: "Cyber Bear #002", rotate: 2 },
+    { src: "/assets/bears/bear_3.png", name: "Crown King #003", rotate: -2 },
+    { src: "/assets/bears/bear_4.png", name: "Panda Bear #004", rotate: 6 },
   ];
 
   const heroStats = [
-    { value: '5,555', label: 'SUPPLY' },
-    { value: 'FREE', label: 'ALLOWLIST' },
-    { value: '0.00025 ETH', label: 'PUBLIC MINT' },
-    { value: 'ROBINHOOD', label: 'CHAIN' },
+    { value: "5,555", label: "SUPPLY" },
+    { value: "FREE", label: "ALLOWLIST" },
+    { value: "0.00025 ETH", label: "PUBLIC MINT" },
+    { value: "ROBINHOOD", label: "CHAIN" },
   ];
 
   return (

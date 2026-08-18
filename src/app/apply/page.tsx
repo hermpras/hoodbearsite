@@ -1,13 +1,14 @@
-import Image from 'next/image';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import ApplyForm from '@/components/ApplyForm';
-import { Sparkles, ShieldCheck, Flame, Users } from 'lucide-react';
-import { HOODBEAR_CONFIG } from '@/config/constants';
+import Image from "next/image";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import ApplyForm from "@/components/ApplyForm";
+import { Sparkles, ShieldCheck, Flame, Users } from "lucide-react";
+import { HOODBEAR_CONFIG } from "@/config/constants";
 
 export const metadata = {
-  title: 'Apply to Allowlist — HoodBear',
-  description: 'Claim your HoodBear allowlist spot. Complete the social tasks and submit your details.',
+  title: "Apply to Allowlist — HoodBear",
+  description:
+    "Claim your HoodBear allowlist spot. Complete the social tasks and submit your details.",
 };
 
 export default function ApplyPage() {
@@ -32,7 +33,8 @@ export default function ApplyPage() {
           </h1>
 
           <p className="text-base sm:text-lg text-hood-primary/80 font-medium leading-relaxed max-w-lg mx-auto">
-            Complete the steps below, then submit your details to secure your spot.
+            Complete the steps below, then submit your details to secure your
+            spot.
           </p>
         </div>
 
@@ -42,22 +44,11 @@ export default function ApplyPage() {
           <div className="lg:col-span-5 space-y-6">
             {/* Artwork Card */}
             <div className="bg-hood-card border-2 border-hood-primary rounded-hood-lg p-6 shadow-hood space-y-6">
-              {/* Badge */}
-              <div className="flex items-center justify-between">
-                <span className="font-pixel text-[10px] bg-hood-primary text-hood-light px-2.5 py-1 rounded font-bold uppercase">
-                  {HOODBEAR_CONFIG.TOTAL_SUPPLY} PIXEL BEARS
-                </span>
-                <span className="inline-flex items-center gap-1 font-pixel text-[10px] text-green-800 font-bold bg-green-800/10 px-2 py-0.5 rounded">
-                  <span className="w-2 h-2 rounded-full bg-green-600 animate-pulse" />
-                  PHASE 2 LIVE
-                </span>
-              </div>
-
               {/* Main Visual Display */}
               <div className="relative aspect-square w-full rounded-hood border-2 border-hood-primary bg-hood-bg overflow-hidden flex items-center justify-center p-4 group">
                 <div className="absolute inset-0 bg-gradient-to-t from-hood-primary/20 to-transparent z-10 pointer-events-none" />
                 <Image
-                  src="/assets/bears/bear_1.svg"
+                  src="/assets/bears/bear_7.png"
                   alt="HoodBear Artwork Showcase"
                   fill
                   sizes="(max-width: 768px) 100vw, 400px"
@@ -68,7 +59,7 @@ export default function ApplyPage() {
 
               {/* Artwork Gallery Teaser Grid */}
               <div className="grid grid-cols-4 gap-2.5 pt-2">
-                {['bear_2.svg', 'bear_3.svg', 'bear_4.svg', 'bear_5.svg'].map(
+                {["bear_9.png", "bear_6.png", "bear_4.png", "bear_10.png"].map(
                   (bearImg, idx) => (
                     <div
                       key={idx}
@@ -82,7 +73,7 @@ export default function ApplyPage() {
                         className="pixelated object-contain p-1"
                       />
                     </div>
-                  )
+                  ),
                 )}
               </div>
 
@@ -99,12 +90,6 @@ export default function ApplyPage() {
                     <Flame className="w-4 h-4" />
                   </div>
                   <span>Guaranteed Mint Access for Approved Applicants</span>
-                </div>
-                <div className="flex items-center gap-3 text-xs font-bold text-hood-primary">
-                  <div className="p-1.5 rounded bg-hood-accent/20 text-hood-accent">
-                    <Users className="w-4 h-4" />
-                  </div>
-                  <span>5,555 Hand-Drawn Pixel Bears</span>
                 </div>
               </div>
             </div>
