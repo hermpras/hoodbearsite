@@ -11,7 +11,9 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
-  const isApplyPage = pathname === "/apply";
+  const isHomePage = pathname === "/";
+  const isApplyPage = pathname.startsWith("/apply");
+  const isDocsPage = pathname.startsWith("/docs");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,11 +28,11 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { label: "Home", href: isApplyPage ? "/#hero" : "#hero" },
-    { label: "Collection", href: isApplyPage ? "/#collection" : "#collection" },
+    { label: "Home", href: isHomePage ? "#hero" : "/#hero" },
+    { label: "Collection", href: isHomePage ? "#collection" : "/#collection" },
     {
       label: "Allocation",
-      href: isApplyPage ? "/#how-it-works" : "#how-it-works",
+      href: isHomePage ? "#how-it-works" : "/#how-it-works",
     },
     { label: "Docs", href: "/docs" },
   ];
@@ -38,7 +40,7 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled || isApplyPage
+        isScrolled || !isHomePage
           ? "bg-hood-bg/95 backdrop-blur-md border-b-2 border-hood-secondary/40 py-3.5 shadow-sm"
           : "bg-transparent py-5"
       }`}
@@ -47,7 +49,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           {/* Brand Logo */}
           <Link
-            href={isApplyPage ? "/#hero" : "#hero"}
+            href={isHomePage ? "#hero" : "/#hero"}
             className="flex items-center gap-2.5 group focus:outline-none"
           >
             <div className="relative w-9 h-9 rounded-hood bg-hood-primary border-2 border-hood-primary flex items-center justify-center overflow-hidden shadow-hood-sm group-hover:translate-x-[1px] group-hover:translate-y-[1px] transition-transform">
@@ -66,15 +68,24 @@ export default function Navbar() {
 
           {/* Desktop Nav Links */}
           <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="text-sm font-semibold text-hood-primary/90 hover:text-hood-accent transition-colors tracking-wide relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-hood-accent hover:after:w-full after:transition-all"
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const isCurrent =
+                (link.label === "Docs" && isDocsPage) ||
+                (link.label === "Home" && isHomePage);
+              return (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className={`text-sm font-semibold tracking-wide relative transition-colors after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:bg-hood-accent after:transition-all ${
+                    isCurrent
+                      ? "text-hood-accent after:w-full font-bold"
+                      : "text-hood-primary/90 hover:text-hood-accent after:w-0 hover:after:w-full"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
           </nav>
 
           {/* Desktop CTA */}
@@ -118,17 +129,26 @@ export default function Navbar() {
       {mobileMenuOpen && (
         <div className="md:hidden fixed inset-x-0 top-[67px] bg-hood-bg border-b-2 border-hood-primary p-6 shadow-xl animate-in slide-in-from-top-2 duration-200">
           <div className="flex flex-col gap-4">
-            {navLinks.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-base font-bold text-hood-primary hover:text-hood-accent py-2 border-b border-hood-secondary/30 flex items-center justify-between"
-              >
-                {link.label}
-                <span className="font-pixel text-xs text-hood-accent">→</span>
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const isCurrent =
+                (link.label === "Docs" && isDocsPage) ||
+                (link.label === "Home" && isHomePage);
+              return (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`text-base font-bold py-2 border-b border-hood-secondary/30 flex items-center justify-between transition-colors ${
+                    isCurrent
+                      ? "text-hood-accent font-extrabold"
+                      : "text-hood-primary hover:text-hood-accent"
+                  }`}
+                >
+                  <span>{link.label}</span>
+                  <span className="font-pixel text-xs text-hood-accent">→</span>
+                </Link>
+              );
+            })}
             <Link
               href="/apply"
               onClick={() => setMobileMenuOpen(false)}
