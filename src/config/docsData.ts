@@ -131,8 +131,8 @@ export const PUBLIC_MINT_INFO = {
 
 export const HOLDER_BENEFITS_INFO = {
   title: "Mutant Bear Airdrop",
-  badge: "2ND COLLECTION",
+  badge: "SECOND COLLECTION",
   description:
-    "Holding Genesis HoodBears unlocks direct access to the future of the HoodBear ecosystem. All verified holders will be eligible to receive a free airdrop of the upcoming 2nd collection: Mutant Bear.",
+    "Holding Genesis HoodBears unlocks direct access to the future of the HoodBear ecosystem. All verified holders will be eligible to receive a free airdrop of the upcoming second collection: Mutant Bear.",
   ratio: "3 Genesis HoodBear = 1 Mutant Bear Airdrop eligibility",
 };

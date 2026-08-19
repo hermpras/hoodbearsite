@@ -413,7 +413,7 @@ export default function DocsPage() {
             id="holder-benefits"
             numeral="06"
             title="Holder Benefits"
-            description="Exclusive snapshot rewards and the upcoming Mutant Bear 2nd collection airdrop."
+            description="Exclusive snapshot rewards and the upcoming Mutant Bear second collection airdrop."
           >
             <div className="space-y-6">
               {/* Featured Mutant Bear Airdrop Card */}
@@ -422,7 +422,7 @@ export default function DocsPage() {
                   <div className="flex items-center gap-2">
                     <Sparkles className="w-4 h-4 text-hood-accent shrink-0" />
                     <span className="font-pixel text-[10px] text-hood-accent font-bold uppercase tracking-wider">
-                      2ND COLLECTION AIRDROP
+                      SECOND COLLECTION AIRDROP
                     </span>
                   </div>
                   <div className="px-2.5 py-0.5 rounded bg-hood-accent/15 border border-hood-accent/30 font-pixel text-[9px] text-hood-accent font-bold">
@@ -438,7 +438,7 @@ export default function DocsPage() {
                     Holding Genesis HoodBears unlocks direct access to the
                     future of the HoodBear ecosystem. All verified holders
                     holding 3 or more Genesis HoodBears will be eligible to
-                    receive a free airdrop of the upcoming 2nd collection:{" "}
+                    receive a free airdrop of the upcoming seconnd collection:{" "}
                     <strong>Mutant Bear</strong>.
                   </p>
                 </div>
