@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Link from 'next/link';
+import { useState } from "react";
+import Link from "next/link";
 import {
   ExternalLink,
   Check,
@@ -11,23 +11,24 @@ import {
   CheckCircle2,
   Sparkles,
   ArrowRight,
-} from 'lucide-react';
-import { HOODBEAR_CONFIG } from '@/config/constants';
+} from "lucide-react";
+import { HOODBEAR_CONFIG } from "@/config/constants";
 
 const ETH_WALLET_REGEX = /^0x[a-fA-F0-9]{40}$/;
-const X_STATUS_URL_REGEX = /^https?:\/\/(twitter\.com|x\.com)\/[a-zA-Z0-9_]+\/status\/[0-9]+/;
+const X_STATUS_URL_REGEX =
+  /^https?:\/\/(twitter\.com|x\.com)\/[a-zA-Z0-9_]+\/status\/[0-9]+/;
 const X_HANDLE_REGEX = /^@?[a-zA-Z0-9_]{1,30}$/;
 
 export default function ApplyForm() {
   // Task completion states
   const [task1Follow, setTask1Follow] = useState(false);
   const [task2LikeRt, setTask2LikeRt] = useState(false);
-  const [task3CommentUrl, setTask3CommentUrl] = useState('');
+  const [task3CommentUrl, setTask3CommentUrl] = useState("");
   const [task3Confirmed, setTask3Confirmed] = useState(false);
 
   // Form input states
-  const [xUsername, setXUsername] = useState('');
-  const [walletAddress, setWalletAddress] = useState('');
+  const [xUsername, setXUsername] = useState("");
+  const [walletAddress, setWalletAddress] = useState("");
 
   // UI status states
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
@@ -64,37 +65,37 @@ export default function ApplyForm() {
 
     // 1. Task Completion check
     if (!isFormUnlocked) {
-      setErrorMsg('Please complete all three tasks.');
+      setErrorMsg("Please complete all three tasks.");
       return;
     }
 
     // 2. X Username check
     const trimmedX = xUsername.trim();
     if (!trimmedX || !X_HANDLE_REGEX.test(trimmedX)) {
-      setErrorMsg('Please enter your X username.');
+      setErrorMsg("Please enter your X username.");
       return;
     }
 
     // 3. Wallet Address check
     const trimmedWallet = walletAddress.trim();
     if (!trimmedWallet || !ETH_WALLET_REGEX.test(trimmedWallet)) {
-      setErrorMsg('Please enter a valid wallet address.');
+      setErrorMsg("Please enter a valid wallet address.");
       return;
     }
 
     // 4. Comment URL check
     const trimmedCommentUrl = task3CommentUrl.trim();
     if (!trimmedCommentUrl || !X_STATUS_URL_REGEX.test(trimmedCommentUrl)) {
-      setErrorMsg('Please enter your X comment link.');
+      setErrorMsg("Please enter your X comment link.");
       return;
     }
 
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('/api/apply', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      const response = await fetch("/api/apply", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           xUsername: trimmedX,
           walletAddress: trimmedWallet,
@@ -108,7 +109,7 @@ export default function ApplyForm() {
       const data = await response.json();
 
       if (!response.ok) {
-        setErrorMsg(data.error || 'Something went wrong. Please try again.');
+        setErrorMsg(data.error || "Something went wrong. Please try again.");
         setIsSubmitting(false);
         return;
       }
@@ -119,8 +120,8 @@ export default function ApplyForm() {
       });
       setIsSubmitted(true);
     } catch (err) {
-      console.error('Submission error:', err);
-      setErrorMsg('Something went wrong. Please try again.');
+      console.error("Submission error:", err);
+      setErrorMsg("Something went wrong. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -144,7 +145,8 @@ export default function ApplyForm() {
               APPLICATION RECEIVED
             </h2>
             <p className="text-sm text-hood-primary/80 font-medium max-w-md pt-1">
-              Your HoodBear allowlist application has been received. Keep an eye on HoodBear for updates.
+              Your HoodBear allowlist application has been received. Keep an eye
+              on HoodBear for updates.
             </p>
           </div>
         </div>
@@ -158,10 +160,14 @@ export default function ApplyForm() {
           </div>
           <div className="flex justify-between items-center pb-2 border-b border-hood-secondary/40">
             <span className="font-bold text-hood-primary/70">X USERNAME:</span>
-            <span className="font-bold text-hood-primary">{submittedData?.xUsername}</span>
+            <span className="font-bold text-hood-primary">
+              {submittedData?.xUsername}
+            </span>
           </div>
           <div className="flex justify-between items-start gap-2">
-            <span className="font-bold text-hood-primary/70 shrink-0">ROBINHOOD WALLET:</span>
+            <span className="font-bold text-hood-primary/70 shrink-0">
+              ROBINHOOD WALLET:
+            </span>
             <span className="font-bold text-hood-primary text-right break-all">
               {submittedData?.walletAddress}
             </span>
@@ -213,8 +219,8 @@ export default function ApplyForm() {
         <div
           className={`border-2 rounded-hood-lg p-5 transition-all ${
             task1Follow
-              ? 'bg-hood-card border-hood-primary shadow-hood'
-              : 'bg-hood-card/60 border-hood-secondary/60 shadow-sm'
+              ? "bg-hood-card border-hood-primary shadow-hood"
+              : "bg-hood-card/60 border-hood-secondary/60 shadow-sm"
           }`}
         >
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -233,7 +239,8 @@ export default function ApplyForm() {
                 FOLLOW HOODBEAR ON X
               </h4>
               <p className="text-xs text-hood-primary/80 font-medium">
-                Follow the official HoodBear account on X, then return and confirm.
+                Follow the official HoodBear account on X, then return and
+                confirm.
               </p>
             </div>
 
@@ -260,7 +267,7 @@ export default function ApplyForm() {
                 className="w-5 h-5 rounded border-2 border-hood-primary text-hood-accent focus:ring-hood-accent focus:ring-offset-0 cursor-pointer accent-[#C47A3A]"
               />
               <span className="text-xs font-bold text-hood-primary">
-                I followed @HoodBear
+                I followed @hoodbearNFT
               </span>
             </label>
           </div>
@@ -270,8 +277,8 @@ export default function ApplyForm() {
         <div
           className={`border-2 rounded-hood-lg p-5 transition-all ${
             task2LikeRt
-              ? 'bg-hood-card border-hood-primary shadow-hood'
-              : 'bg-hood-card/60 border-hood-secondary/60 shadow-sm'
+              ? "bg-hood-card border-hood-primary shadow-hood"
+              : "bg-hood-card/60 border-hood-secondary/60 shadow-sm"
           }`}
         >
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -290,7 +297,8 @@ export default function ApplyForm() {
                 LIKE & REPOST
               </h4>
               <p className="text-xs text-hood-primary/80 font-medium">
-                Like and repost the official HoodBear post, then return and confirm.
+                Like and repost the official HoodBear post, then return and
+                confirm.
               </p>
             </div>
 
@@ -327,8 +335,8 @@ export default function ApplyForm() {
         <div
           className={`border-2 rounded-hood-lg p-5 transition-all ${
             isTask3Valid
-              ? 'bg-hood-card border-hood-primary shadow-hood'
-              : 'bg-hood-card/60 border-hood-secondary/60 shadow-sm'
+              ? "bg-hood-card border-hood-primary shadow-hood"
+              : "bg-hood-card/60 border-hood-secondary/60 shadow-sm"
           }`}
         >
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -402,8 +410,8 @@ export default function ApplyForm() {
       <div
         className={`border-2 rounded-hood-lg p-6 transition-all ${
           isFormUnlocked
-            ? 'bg-hood-card border-hood-primary shadow-hood'
-            : 'bg-hood-card/40 border-hood-secondary/40 opacity-90'
+            ? "bg-hood-card border-hood-primary shadow-hood"
+            : "bg-hood-card/40 border-hood-secondary/40 opacity-90"
         }`}
       >
         <div className="flex items-center justify-between pb-4 border-b border-hood-secondary/30 mb-6">
@@ -411,8 +419,8 @@ export default function ApplyForm() {
             <div
               className={`p-2 rounded-hood border-2 ${
                 isFormUnlocked
-                  ? 'bg-hood-accent text-hood-light border-hood-primary shadow-hood-sm'
-                  : 'bg-hood-secondary/20 text-hood-primary/60 border-hood-secondary/50'
+                  ? "bg-hood-accent text-hood-light border-hood-primary shadow-hood-sm"
+                  : "bg-hood-secondary/20 text-hood-primary/60 border-hood-secondary/50"
               }`}
             >
               {isFormUnlocked ? (
@@ -434,11 +442,11 @@ export default function ApplyForm() {
           <div
             className={`font-pixel text-[10px] font-bold px-2.5 py-1 rounded border ${
               isFormUnlocked
-                ? 'bg-green-800/10 border-green-800/30 text-green-800'
-                : 'bg-amber-800/10 border-amber-800/30 text-amber-900'
+                ? "bg-green-800/10 border-green-800/30 text-green-800"
+                : "bg-amber-800/10 border-amber-800/30 text-amber-900"
             }`}
           >
-            {isFormUnlocked ? 'UNLOCKED' : 'LOCKED'}
+            {isFormUnlocked ? "UNLOCKED" : "LOCKED"}
           </div>
         </div>
 
@@ -496,7 +504,8 @@ export default function ApplyForm() {
               className="w-full px-4 py-3 bg-hood-bg border-2 border-hood-primary rounded-hood text-sm font-mono text-hood-primary placeholder-hood-primary/40 focus:outline-none focus:border-hood-accent disabled:bg-hood-secondary/20 disabled:cursor-not-allowed transition-colors shadow-sm"
             />
             <p className="text-[11px] text-hood-primary/70 font-medium">
-              Enter a valid Ethereum-compatible wallet address. Manual input only — no wallet connection required.
+              Enter a valid Ethereum-compatible wallet address. Manual input
+              only — no wallet connection required.
             </p>
           </div>
 
@@ -515,8 +524,8 @@ export default function ApplyForm() {
               disabled={!isFormUnlocked || isSubmitting}
               className={`w-full py-4 px-6 rounded-hood font-display text-sm uppercase tracking-wider font-bold border-2 transition-all flex items-center justify-center gap-2 ${
                 isFormUnlocked && !isSubmitting
-                  ? 'bg-hood-accent hover:bg-amber-700 text-hood-light border-hood-primary shadow-hood hover:shadow-hood-sm hover:translate-x-[1px] hover:translate-y-[1px] cursor-pointer'
-                  : 'bg-hood-secondary/30 text-hood-primary/40 border-hood-secondary/60 cursor-not-allowed shadow-none'
+                  ? "bg-hood-accent hover:bg-amber-700 text-hood-light border-hood-primary shadow-hood hover:shadow-hood-sm hover:translate-x-[1px] hover:translate-y-[1px] cursor-pointer"
+                  : "bg-hood-secondary/30 text-hood-primary/40 border-hood-secondary/60 cursor-not-allowed shadow-none"
               }`}
             >
               {isSubmitting ? (

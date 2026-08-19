@@ -19,21 +19,24 @@ export const DOCS_SECTIONS: DocsSection[] = [
     numeral: "02",
     title: "Collection",
     shortTitle: "Collection",
-    description: "Verified specifications for the 5,555 hand-drawn pixel bear collection.",
+    description:
+      "Verified specifications for the 5,555 hand-drawn pixel bear collection.",
   },
   {
     id: "how-the-mint-works",
     numeral: "03",
     title: "How the Mint Works",
     shortTitle: "Mint Structure",
-    description: "Transparent breakdown of Team, Whitelist, and Public mint allocations.",
+    description:
+      "Transparent breakdown of Team, Whitelist, and Public mint allocations.",
   },
   {
     id: "allowlist",
     numeral: "04",
     title: "Allowlist",
     shortTitle: "Allowlist",
-    description: "Details for the 3,500 guaranteed free mint allocation and application flow.",
+    description:
+      "Details for the 3,500 guaranteed free mint allocation and application flow.",
   },
   {
     id: "public-mint",
@@ -47,7 +50,8 @@ export const DOCS_SECTIONS: DocsSection[] = [
     numeral: "06",
     title: "Holder Benefits",
     shortTitle: "Holder Benefits",
-    description: "Exclusive snapshot rewards and the upcoming Mutant Bear 2nd collection airdrop.",
+    description:
+      "Exclusive snapshot rewards and the upcoming Mutant Bear 2nd collection airdrop.",
   },
 ];
 
@@ -80,9 +84,9 @@ export const MINT_TIERS: MintTier[] = [
     numeral: "01",
     name: "TEAM",
     amount: "100",
-    price: "N/A",
-    limit: "Reserved",
-    details: "Reserved. Minted by the team, never sold.",
+    price: "FREE",
+    limit: "100",
+    details: "Reserved for giveaways, community rewards & team engagement",
     isPrimary: false,
   },
   {
@@ -92,7 +96,7 @@ export const MINT_TIERS: MintTier[] = [
     amount: "3,500",
     price: "FREE",
     limit: "1 per wallet",
-    details: "Free to mint. 1 per wallet for approved allowlist members.",
+    details: "",
     isPrimary: true,
   },
   {
@@ -102,7 +106,7 @@ export const MINT_TIERS: MintTier[] = [
     amount: "1,955",
     price: "0.00025 ETH",
     limit: "5 per wallet",
-    details: "0.00025 ETH per mint, max 5 per wallet on Robinhood chain.",
+    details: "",
     isPrimary: false,
   },
 ];
@@ -122,7 +126,7 @@ export const PUBLIC_MINT_INFO = {
   limitPerWallet: "5 per wallet",
   chain: "Robinhood",
   description:
-    "The Public Mint opens after the allowlist window concludes. Any remaining supply will be available to all participants at 0.00025 ETH on the Robinhood chain.",
+    "The Public Mint opens after the allowlist window concludes. Any remaining supply will be available to all participants at 0.00025 ETH. ",
 };
 
 export const HOLDER_BENEFITS_INFO = {

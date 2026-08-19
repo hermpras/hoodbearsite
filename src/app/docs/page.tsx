@@ -34,7 +34,9 @@ export default function DocsPage() {
       if (visibleEntries.length > 0) {
         // Pick the top visible section
         const topEntry = visibleEntries.reduce((prev, curr) =>
-          prev.boundingClientRect.top < curr.boundingClientRect.top ? prev : curr
+          prev.boundingClientRect.top < curr.boundingClientRect.top
+            ? prev
+            : curr,
         );
         setActiveSection(topEntry.target.id);
       }
@@ -63,7 +65,10 @@ export default function DocsPage() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         {/* LEFT: Sticky Sidebar */}
         <div className="lg:col-span-4 xl:col-span-3">
-          <DocsSidebar activeSection={activeSection} onSectionClick={(id) => setActiveSection(id)} />
+          <DocsSidebar
+            activeSection={activeSection}
+            onSectionClick={(id) => setActiveSection(id)}
+          />
         </div>
 
         {/* CENTER / MAIN: Editorial Documentation Content */}
@@ -81,10 +86,15 @@ export default function DocsPage() {
               <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
                 <div className="md:col-span-8 space-y-3.5">
                   <p className="text-sm sm:text-base text-hood-primary font-medium leading-relaxed">
-                    HoodBear is a <strong>5,555-piece</strong> collection of hand-drawn pixel bears created around collecting, identity, and the feeling of belonging to HoodBear.
+                    HoodBear is a <strong>5,555-piece</strong> collection of
+                    hand-drawn pixel bears created around collecting, identity,
+                    and the feeling of belonging to HoodBear.
                   </p>
                   <p className="text-xs sm:text-sm text-hood-primary/80 leading-relaxed font-medium">
-                    Each HoodBear is generated from a rich library of handcrafted pixel traits — combining diverse expressions, distinct outfits, and unique colorways designed to let every collector express their own personality.
+                    Each HoodBear is generated from a rich library of
+                    handcrafted pixel traits — combining diverse expressions,
+                    distinct outfits, and unique colorways designed to let every
+                    collector express their own personality.
                   </p>
                 </div>
 
@@ -116,7 +126,8 @@ export default function DocsPage() {
                     </span>
                   </div>
                   <p className="text-xs text-hood-primary/75 font-medium leading-relaxed">
-                    Every piece is crafted pixel-by-pixel with meticulous attention to detail.
+                    Every piece is crafted pixel-by-pixel with meticulous
+                    attention to detail.
                   </p>
                 </div>
 
@@ -128,7 +139,8 @@ export default function DocsPage() {
                     </span>
                   </div>
                   <p className="text-xs text-hood-primary/75 font-medium leading-relaxed">
-                    A digital identity for enthusiasts, creators, and pixel art collectors.
+                    A digital identity for enthusiasts, creators, and pixel art
+                    collectors.
                   </p>
                 </div>
 
@@ -140,7 +152,8 @@ export default function DocsPage() {
                     </span>
                   </div>
                   <p className="text-xs text-hood-primary/75 font-medium leading-relaxed">
-                    Transparent mint mechanics with free allocation for active community members.
+                    Transparent mint mechanics with free allocation for active
+                    community members.
                   </p>
                 </div>
               </div>
@@ -288,21 +301,30 @@ export default function DocsPage() {
                     <div className="w-5 h-5 rounded bg-hood-primary text-hood-light flex items-center justify-center font-pixel text-[10px] font-bold shrink-0 mt-0.5 shadow-hood-sm">
                       1
                     </div>
-                    <span>Complete the 3 community social missions on the official application page (Follow, Like & Repost, Comment).</span>
+                    <span>
+                      Complete the 3 community social missions on the official
+                      application page (Follow, Like & Repost, Comment).
+                    </span>
                   </div>
 
                   <div className="flex items-start gap-3">
                     <div className="w-5 h-5 rounded bg-hood-primary text-hood-light flex items-center justify-center font-pixel text-[10px] font-bold shrink-0 mt-0.5 shadow-hood-sm">
                       2
                     </div>
-                    <span>Submit your verified X username and Robinhood wallet address.</span>
+                    <span>
+                      Submit your verified X username and Robinhood wallet
+                      address.
+                    </span>
                   </div>
 
                   <div className="flex items-start gap-3">
                     <div className="w-5 h-5 rounded bg-hood-primary text-hood-light flex items-center justify-center font-pixel text-[10px] font-bold shrink-0 mt-0.5 shadow-hood-sm">
                       3
                     </div>
-                    <span>Approved applicants will receive guaranteed access to mint 1 HoodBear for free during the allowlist window.</span>
+                    <span>
+                      Approved applicants will receive guaranteed access to mint
+                      1 HoodBear for free during the allowlist window.
+                    </span>
                   </div>
                 </div>
 
@@ -375,7 +397,10 @@ export default function DocsPage() {
                   </h4>
                 </div>
                 <p className="text-xs sm:text-sm text-hood-primary/80 font-medium leading-relaxed">
-                  The Public Mint opens after the allowlist phase is completed. Anyone can participate to mint a HoodBear at 0.00025 ETH (max 5 per wallet) on the Robinhood chain until the total collection supply of 5,555 is reached.
+                  The Public Mint opens after the allowlist phase is completed.
+                  Anyone can participate to mint a HoodBear at 0.00025 ETH (max
+                  5 per wallet) until the total collection supply of 5,555 is
+                  reached.
                 </p>
               </div>
             </div>
@@ -410,18 +435,27 @@ export default function DocsPage() {
                     Mutant Bear Airdrop
                   </h3>
                   <p className="text-sm sm:text-[15px] text-hood-primary/85 font-medium leading-relaxed max-w-2xl">
-                    Holding Genesis HoodBears unlocks direct access to the future of the HoodBear ecosystem. All verified holders holding 3 or more Genesis HoodBears will be eligible to receive a free airdrop of the upcoming 2nd collection: <strong>Mutant Bear</strong>.
+                    Holding Genesis HoodBears unlocks direct access to the
+                    future of the HoodBear ecosystem. All verified holders
+                    holding 3 or more Genesis HoodBears will be eligible to
+                    receive a free airdrop of the upcoming 2nd collection:{" "}
+                    <strong>Mutant Bear</strong>.
                   </p>
                 </div>
 
                 <div className="pt-4 border-t border-hood-secondary/30 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-[13px] text-hood-primary/85 font-medium">
                   <div className="flex items-center gap-2.5">
                     <div className="w-2 h-2 rounded-full bg-hood-accent shrink-0" />
-                    <span className="font-bold text-hood-primary">3 Genesis HoodBear = 1 Mutant Bear Airdrop eligibility</span>
+                    <span className="font-bold text-hood-primary">
+                      3 Genesis HoodBear = 1 Mutant Bear Airdrop eligibility
+                    </span>
                   </div>
                   <div className="flex items-center gap-2.5">
                     <div className="w-2 h-2 rounded-full bg-hood-accent shrink-0" />
-                    <span>Snapshots will be captured after the initial mint concludes</span>
+                    <span>
+                      Snapshots will be captured after the initial mint
+                      concludes
+                    </span>
                   </div>
                 </div>
               </div>

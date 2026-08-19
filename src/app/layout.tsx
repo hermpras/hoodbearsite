@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     title: "HoodBear — 5,555 Pixel Bears",
     description:
       "HoodBear is a 5,555-piece hand-drawn pixel bear NFT collection. A place to belong.",
-    creator: "@hoodbear",
+    creator: "@hoodbearNFT",
     images: ["/assets/bears/bear_1.png"],
   },
   icons: {

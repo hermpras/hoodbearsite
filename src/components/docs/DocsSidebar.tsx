@@ -157,24 +157,7 @@ export default function DocsSidebar({
           </nav>
 
           {/* Quick Apply Callout */}
-          <div className="bg-hood-card border-2 border-hood-primary p-4 rounded-hood-lg shadow-hood space-y-3">
-            <div className="flex items-center gap-2">
-              <Sparkles className="w-3.5 h-3.5 text-hood-accent" />
-              <span className="font-pixel text-[9px] text-hood-primary font-bold uppercase tracking-wider">
-                ALLOWLIST APPLICATION
-              </span>
-            </div>
-            <p className="text-xs text-hood-primary/80 font-medium leading-relaxed">
-              Complete the community checklist to secure your guaranteed free mint spot.
-            </p>
-            <Link
-              href="/apply"
-              className="w-full inline-flex items-center justify-center gap-1.5 font-display text-xs uppercase tracking-wider py-2.5 px-4 bg-hood-accent hover:bg-amber-700 text-hood-light font-bold rounded-hood border-2 border-hood-primary shadow-hood-sm hover:shadow-hood transition-all"
-            >
-              <span>APPLY FOR ALLOWLIST</span>
-              <ArrowUpRight className="w-3.5 h-3.5 stroke-[2.5]" />
-            </Link>
-          </div>
+          
         </div>
       </aside>
     </>

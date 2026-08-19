@@ -1,28 +1,28 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { Users, Sparkles, Globe } from 'lucide-react';
+import { motion } from "framer-motion";
+import { Users, Sparkles, Globe } from "lucide-react";
 
 export default function MintSection() {
   const mintCards = [
     {
-      step: '01 — TEAM',
-      amount: '100',
-      copy: 'Reserved for giveaways, community rewards & team engagement.',
+      step: "01 — TEAM",
+      amount: "100",
+      copy: "Reserved for giveaways, community rewards & team engagement.",
       icon: Users,
       highlight: false,
     },
     {
-      step: '02 — ALLOWLIST',
-      amount: '3,500',
-      copy: 'Free to mint, 1 per wallet.',
+      step: "02 — ALLOWLIST",
+      amount: "3,500",
+      copy: "Free to mint, 1 per wallet.",
       icon: Sparkles,
       highlight: true,
     },
     {
-      step: '03 — PUBLIC',
-      amount: '1,955',
-      copy: '0.00025 ETH.',
+      step: "03 — PUBLIC",
+      amount: "1,955",
+      copy: "0.00025 ETH.",
       icon: Globe,
       highlight: false,
     },
@@ -44,9 +44,6 @@ export default function MintSection() {
           <h2 className="font-display text-3xl sm:text-5xl font-bold text-hood-primary tracking-tight">
             HOW THE MINT RUNS
           </h2>
-          <p className="text-lg text-hood-primary/80 font-medium">
-            5,555 bears. Here&apos;s how they enter HoodBear.
-          </p>
         </div>
 
         {/* 3 Allocation Cards */}
@@ -62,8 +59,8 @@ export default function MintSection() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className={`relative rounded-hood-lg border-3 border-hood-primary p-8 flex flex-col justify-between transition-all ${
                   card.highlight
-                    ? 'bg-hood-card shadow-hood-lg ring-2 ring-hood-accent'
-                    : 'bg-hood-bg shadow-hood'
+                    ? "bg-hood-card shadow-hood-lg ring-2 ring-hood-accent"
+                    : "bg-hood-bg shadow-hood"
                 }`}
               >
                 {card.highlight && (

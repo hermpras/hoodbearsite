@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { ArrowUpRight, Twitter } from 'lucide-react';
+import { motion } from "framer-motion";
+import { ArrowUpRight, Twitter } from "lucide-react";
 
 export default function Community() {
   return (
@@ -21,7 +21,8 @@ export default function Community() {
             FIND YOUR PLACE IN THE HOODBEAR
           </h2>
           <p className="text-lg text-hood-primary/80 font-medium">
-            Follow our official channel for announcements, art drops, and community updates.
+            Follow our official channel for announcements, art drops, and
+            community updates.
           </p>
         </div>
 
@@ -49,18 +50,19 @@ export default function Community() {
                   X / Twitter
                 </h3>
                 <span className="text-xs text-hood-primary/70 font-semibold">
-                  @hoodbear
+                  @hoodbearNFT
                 </span>
               </div>
 
               <p className="text-sm text-hood-primary/90 font-medium leading-relaxed">
-                Follow @hoodbear for official announcements, community spotlights, and artwork previews.
+                Follow @hoodbearNFT for official announcements, community
+                spotlights, and artwork previews.
               </p>
             </div>
 
             <div className="pt-6 mt-6 border-t border-hood-secondary/40">
               <a
-                href="https://x.com/hoodbear"
+                href="https://x.com/hoodbearNFT"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full font-display text-xs uppercase tracking-wider py-3 px-4 bg-hood-primary hover:bg-hood-accent text-hood-light font-bold rounded-hood border-2 border-hood-primary shadow-hood-sm hover:shadow-hood transition-all flex items-center justify-center gap-2 group"
