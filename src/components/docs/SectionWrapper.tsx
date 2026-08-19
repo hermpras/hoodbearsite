@@ -24,7 +24,7 @@ export default function SectionWrapper({
       <div className="space-y-3 pb-5 border-b border-hood-secondary/40">
         <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-hood bg-hood-bg border border-hood-secondary/60">
           <span className="font-pixel text-[9px] sm:text-[10px] text-hood-accent uppercase tracking-wider font-bold">
-            SECTION {numeral}
+            {numeral}
           </span>
         </div>
 

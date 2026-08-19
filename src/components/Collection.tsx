@@ -96,11 +96,11 @@ export default function Collection() {
             </span>
           </div>
           <h2 className="font-display text-3xl sm:text-5xl font-bold text-hood-primary tracking-tight">
-            THE HOODBEAR
+            A FEW FROM THE HOOD
           </h2>
           <p className="text-lg text-hood-primary/80 font-medium">
-            5,555 hand-drawn pixel bears. Each with distinct expressions,
-            traits, and personalities.
+            A small taste of the crew. The rest are waiting for those on the
+            list.
           </p>
         </div>
 

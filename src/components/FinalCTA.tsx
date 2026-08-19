@@ -28,12 +28,13 @@ export default function FinalCTA() {
 
           {/* Heading */}
           <h2 className="font-display text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-hood-primary uppercase">
-            JOIN THE HOODBEAR
+            GET IN THE HOOD
           </h2>
 
           {/* Supporting Copy */}
           <p className="text-base sm:text-lg text-hood-primary/85 font-medium max-w-xl mx-auto leading-relaxed">
-            Secure your spot on the allowlist and get guaranteed access to mint 1 bear for free.
+            Secure your spot on the allowlist and get guaranteed access to mint
+            1 bear for free.
           </p>
 
           {/* CTA Button */}
