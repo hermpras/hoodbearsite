@@ -86,15 +86,15 @@ export default function DocsPage() {
               <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
                 <div className="md:col-span-8 space-y-3.5">
                   <p className="text-sm sm:text-base text-hood-primary font-medium leading-relaxed">
-                    HoodBear is a <strong>5,555-piece</strong> collection of
-                    hand-drawn pixel bears created around collecting, identity,
-                    and the feeling of belonging to HoodBear.
+                    HoodBear is a <strong>5,555-piece</strong> generative
+                    collection of pixel bears, built around collecting,
+                    identity, and finding your place in the hood.
                   </p>
-                  <p className="text-xs sm:text-sm text-hood-primary/80 leading-relaxed font-medium">
-                    Each HoodBear is generated from a rich library of
-                    handcrafted pixel traits — combining diverse expressions,
-                    distinct outfits, and unique colorways designed to let every
-                    collector express their own personality.
+                  <p className="text-sm sm:text-base text-hood-primary/80 leading-relaxed font-medium">
+                    Every bear is assembled from a library of hand-drawn traits
+                    — expressions, fits, and fur colorways — combined to create
+                    thousands of one-of-a-kind combinations. No two come out
+                    exactly alike.
                   </p>
                 </div>
 
