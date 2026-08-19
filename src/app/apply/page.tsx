@@ -48,7 +48,7 @@ export default function ApplyPage() {
               <div className="relative aspect-square w-full rounded-hood border-2 border-hood-primary bg-hood-bg overflow-hidden flex items-center justify-center p-4 group">
                 <div className="absolute inset-0 bg-gradient-to-t from-hood-primary/20 to-transparent z-10 pointer-events-none" />
                 <Image
-                  src="/assets/bears/bear_7.png"
+                  src="/assets/bears/bear_13.png"
                   alt="HoodBear Artwork Showcase"
                   fill
                   sizes="(max-width: 768px) 100vw, 400px"
