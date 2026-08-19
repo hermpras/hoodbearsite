@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://hoodbear.io"),
+  metadataBase: new URL("https://hoodbear.xyz"),
   title: "HoodBear — 5,555 Pixel Bears",
   description:
     "HoodBear is a 5,555-piece hand-drawn pixel bear NFT collection. A place to belong.",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     title: "HoodBear — 5,555 Pixel Bears",
     description:
       "HoodBear is a 5,555-piece hand-drawn pixel bear NFT collection. A place to belong.",
-    url: "https://hoodbear.io",
+    url: "https://hoodbear.xyz",
     siteName: "HoodBear",
     images: [
       {

@@ -7,10 +7,10 @@ import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
   const heroBears = [
-    { src: "/assets/bears/bear_12.png", name: "Honey Bear #001", rotate: -6 },
-    { src: "/assets/bears/bear_2.png", name: "Cyber Bear #002", rotate: 2 },
-    { src: "/assets/bears/bear_3.png", name: "Crown King #003", rotate: -2 },
-    { src: "/assets/bears/bear_4.png", name: "Panda Bear #004", rotate: 6 },
+    { src: "/assets/bears/bear_12.png", name: "Inferno Bear #001", rotate: -6 },
+    { src: "/assets/bears/bear_2.png", name: "Ignis Sharky #002", rotate: 2 },
+    { src: "/assets/bears/bear_3.png", name: "Devil Royalty #003", rotate: -2 },
+    { src: "/assets/bears/bear_4.png", name: "Panda Captain #004", rotate: 6 },
   ];
 
   const heroStats = [

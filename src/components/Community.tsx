@@ -1,5 +1,6 @@
 "use client";
 
+import { HOODBEAR_CONFIG } from "@/config/constants";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Twitter } from "lucide-react";
 
@@ -62,7 +63,7 @@ export default function Community() {
 
             <div className="pt-6 mt-6 border-t border-hood-secondary/40">
               <a
-                href="https://x.com/hoodbearNFT"
+                href={HOODBEAR_CONFIG.X_PROFILE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full font-display text-xs uppercase tracking-wider py-3 px-4 bg-hood-primary hover:bg-hood-accent text-hood-light font-bold rounded-hood border-2 border-hood-primary shadow-hood-sm hover:shadow-hood transition-all flex items-center justify-center gap-2 group"
