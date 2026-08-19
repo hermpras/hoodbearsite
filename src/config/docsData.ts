@@ -62,7 +62,7 @@ export const COLLECTION_DATA = {
   artworkType: "Hand-Drawn Pixel Art",
   chain: "Robinhood",
   summary:
-    "HoodBear is a 5,555-piece collection of hand-drawn pixel bears created around collecting, identity, and the feeling of belonging to HoodBear. Built with a clean aesthetic and handcrafted pixel detail, each bear is uniquely generated from a library of custom traits.",
+    "HoodBear is a 5,555-piece generative collection of pixel bears, built around collecting, identity, and finding your place in the hood. Every bear is assembled from a library of hand-drawn traits, combined to create thousands of one-of-a-kind combinations.",
   revealStatus: "Reveal",
   revealDescription: "Delayed — art reveals after minting closes",
 };
