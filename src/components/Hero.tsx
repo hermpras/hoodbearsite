@@ -49,14 +49,14 @@ export default function Hero() {
             </div>
 
             {/* Main Heading */}
-            <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl font-bold text-hood-primary tracking-tight leading-[1.08]">
-              A NEW GENERATION OF BEARS
+            <h1 className="font-display text-4xl sm:text-6xl lg:text-6xl font-bold text-hood-primary tracking-tight leading-[1.08]">
+              RAISED IN THE HOOD. READY FOR ANYTHING.
             </h1>
 
             {/* Supporting Copy */}
             <p className="text-lg sm:text-xl text-hood-primary/90 font-medium max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-              Handcrafted pixel bears with a whole new mindset. Built to adapt,
-              survive, and rule.
+              A hand-drawn pixel collection built around one idea — you always
+              have a place to belong.
             </p>
 
             {/* CTA Group */}
