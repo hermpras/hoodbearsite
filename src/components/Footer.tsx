@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Twitter } from "lucide-react";
+import { HOODBEAR_CONFIG } from "@/config/constants";
 
 export default function Footer() {
   const footerLinks = [
@@ -52,7 +53,7 @@ export default function Footer() {
           {/* Social Links */}
           <div className="flex items-center gap-3">
             <a
-              href="https://x.com/hoodbearNFT"
+              href={HOODBEAR_CONFIG.X_PROFILE_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="p-2.5 rounded-hood bg-hood-card border-2 border-hood-primary hover:bg-hood-accent hover:text-hood-light transition-colors shadow-hood-sm"
