@@ -13,6 +13,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { HOODBEAR_CONFIG } from "@/config/constants";
+import Turnstile from "@/components/Turnstile";
 
 const ETH_WALLET_REGEX = /^0x[a-fA-F0-9]{40}$/;
 const X_STATUS_URL_REGEX =
@@ -34,6 +35,8 @@ export default function ApplyForm() {
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const [turnstileKey, setTurnstileKey] = useState(0);
   const [submittedData, setSubmittedData] = useState<{
     xUsername: string;
     walletAddress: string;
@@ -90,6 +93,12 @@ export default function ApplyForm() {
       return;
     }
 
+    // 5. Turnstile check
+    if (!turnstileToken) {
+      setErrorMsg("Please complete the verification challenge.");
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
@@ -103,6 +112,7 @@ export default function ApplyForm() {
           taskFollowX: task1Follow,
           taskLikeRepost: task2LikeRt,
           taskComment: true,
+          turnstileToken,
         }),
       });
 
@@ -111,6 +121,8 @@ export default function ApplyForm() {
       if (!response.ok) {
         setErrorMsg(data.error || "Something went wrong. Please try again.");
         setIsSubmitting(false);
+        setTurnstileToken(null);
+        setTurnstileKey((k) => k + 1);
         return;
       }
 
@@ -122,6 +134,8 @@ export default function ApplyForm() {
     } catch (err) {
       console.error("Submission error:", err);
       setErrorMsg("Something went wrong. Please try again.");
+      setTurnstileToken(null);
+      setTurnstileKey((k) => k + 1);
     } finally {
       setIsSubmitting(false);
     }
@@ -509,6 +523,21 @@ export default function ApplyForm() {
             </p>
           </div>
 
+          {/* TURNSTILE VERIFICATION */}
+          {isFormUnlocked && (
+            <div className="pt-1">
+              <Turnstile
+                key={turnstileKey}
+                siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || ""}
+                onVerify={(token) => {
+                  setTurnstileToken(token);
+                  setErrorMsg(null);
+                }}
+                onExpire={() => setTurnstileToken(null)}
+              />
+            </div>
+          )}
+
           {/* INLINE ERROR MESSAGES */}
           {errorMsg && (
             <div className="p-3.5 rounded-hood bg-red-500/10 border-2 border-red-700/30 text-red-800 text-xs font-bold flex items-center gap-2.5 animate-in fade-in duration-150">
@@ -521,9 +550,9 @@ export default function ApplyForm() {
           <div className="pt-2">
             <button
               type="submit"
-              disabled={!isFormUnlocked || isSubmitting}
+              disabled={!isFormUnlocked || isSubmitting || !turnstileToken}
               className={`w-full py-4 px-6 rounded-hood font-display text-sm uppercase tracking-wider font-bold border-2 transition-all flex items-center justify-center gap-2 ${
-                isFormUnlocked && !isSubmitting
+                isFormUnlocked && !isSubmitting && turnstileToken
                   ? "bg-hood-accent hover:bg-amber-700 text-hood-light border-hood-primary shadow-hood hover:shadow-hood-sm hover:translate-x-[1px] hover:translate-y-[1px] cursor-pointer"
                   : "bg-hood-secondary/30 text-hood-primary/40 border-hood-secondary/60 cursor-not-allowed shadow-none"
               }`}
