@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     siteName: "HoodBear",
     images: [
       {
-        url: "/assets/bears/bear_1.png",
+        url: "/assets/bears/og-image.png",
         width: 1200,
         height: 630,
         alt: "HoodBear Pixel Art Showcase",
